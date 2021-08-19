@@ -6,17 +6,236 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1088</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>CAN Analyzer Alpha</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::West</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Отслеживание</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTableWidget" name="trackingTable">
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="columnCount">
+           <number>9</number>
+          </property>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>80</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 0</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 2</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 3</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 4</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 5</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 6</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Байт 7</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1088</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="menuBarConnectionPropertiesButton"/>
+    <addaction name="separator"/>
+    <addaction name="menuBarExitButton"/>
+   </widget>
+   <widget class="QMenu" name="aboutMenu">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="menuBarAboutButton"/>
+   </widget>
+   <widget class="QMenu" name="connectionMenu">
+    <property name="title">
+     <string>Подключение</string>
+    </property>
+    <addaction name="menuBarConnectButton"/>
+    <addaction name="menuBarDisconnectButton"/>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="connectionMenu"/>
+   <addaction name="aboutMenu"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="menuBarConnectionPropertiesButton"/>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_2">
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QTableWidget" name="tableWidget"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_3">
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QTableWidget" name="tableWidget_2"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="menuBarConnectionPropertiesButton">
+   <property name="text">
+    <string>Настройки подключения</string>
+   </property>
+   <property name="iconText">
+    <string>Настройки подключения</string>
+   </property>
+   <property name="toolTip">
+    <string>Настройки подключения</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+  </action>
+  <action name="menuBarExitButton">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="menuBarAboutButton">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="menuBarConnectButton">
+   <property name="text">
+    <string>Подключиться</string>
+   </property>
+  </action>
+  <action name="menuBarDisconnectButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Отключиться</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
+ <slots>
+  <slot>addTextToTextEdit1()</slot>
+ </slots>
 </ui>
